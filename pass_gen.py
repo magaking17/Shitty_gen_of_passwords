@@ -49,8 +49,10 @@ def gen_safe_keys():
                 passwords[k].append(random.choice(PUNCTUATION))
         while len(passwords[k]) != len_of_the_passwords:           #The foolest thing I've ever done in my life
             del passwords[k][-1]
-    for i in range(len(passwords)):
-        print(*passwords[i])
+    for i in range(len(passwords)):    
+        for k in range(len(passwords[i])):
+            print(passwords[i][k], end='')
+        print()
 
     return 0    #Ends this whole nonsense
 
